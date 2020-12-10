@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="flash-msg">
+                {% for msg in messages %}
+                    <p>{{ msg }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <div class="container">
+        <form class="form-new" method="POST">
+            <h2 class="form-signin-heading">Update Account</h2>
+            {{ form.hidden_tag() }}
+            {{ wtf.form_field(form.username) }}
+            {{ wtf.form_field(form.email) }}
+            <div class='center-btn'>
+                <button class="my-btn" type="submit">Update</button>
+            </div>
+            <!-- <input type="text" placeholder="email" name="email">
+            <input type="text" placeholder="password" name="password">
+            <input type="submit" value="Sign In" class="btn btn-secondary"> -->
+        </form>
+{% endblock %}

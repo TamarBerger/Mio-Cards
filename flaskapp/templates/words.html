@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+	{% with messages = get_flashed_messages() %}
+	{% if messages %}
+		<div class="flash-msg">
+			{% for msg in messages %}
+				<p>{{ msg }}</p>
+			{% endfor %}
+		</div>
+	{% endif %}
+	{% endwith %}
+
+<div class="table-container">
+	<div class="center">
+		<table>
+			<tr>
+				<th>Mio</th>
+				<th>Hebrew</th>
+				<th>English</th>
+				<!-- <th>Category</th> -->
+				<th>Creator</th>
+				<th>Date of creation</th>
+			</tr>
+			{% for card in words %}
+			<tr>
+				<td><a class="article-title" href="{{ url_for('card', card_id=card.id) }}">{{ card.word_name }}</a></td>
+				<td>{{ card.hebrew_trans }}</td>
+				<td>{{ card.english_trans }}</td>
+				<!-- <td>{{ card.cat_words}}</td> -->
+				<td>{{ card.creator.username }}</td>
+				<td>{{ card.date_created.strftime('%Y-%m-%d') }}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+</div>
+{% endblock %}
+

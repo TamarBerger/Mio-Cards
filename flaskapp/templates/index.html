@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+    <div class="flash-msg">
+        {% for msg in messages %}
+            <p>{{ msg }}</p>
+        {% endfor %}
+    </div>
+{% endif %}
+{% endwith %}
+    
+    <div class="home">
+            <h2>Welcome to Cardio.</h2>
+            <h2>The best way to learn Mio Cards.</h2>
+    </div>
+{% endblock %}

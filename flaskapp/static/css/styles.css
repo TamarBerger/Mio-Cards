@@ -1,0 +1,94 @@
+html {
+    direction: ltr;
+    margin: 0;
+    padding: 0;
+}
+
+.flash-msg {
+    margin: 50px 120px -25px 120px;
+    text-align: center;
+    font-size: larger;
+    color: red;
+    border-radius: 10px;
+    border: 0.2px solid rgba(78, 71, 71, 0.767);
+    padding: 10px 100px 5px 100px;
+    background-color: rgba(221, 221, 221, 0.527);
+}
+
+.form-new {
+    margin: 50px;
+    border-radius: 10px;
+    padding: 40px 100px 40px 100px;
+    background-color: rgba(221, 221, 221, 0.527);
+}
+
+.center {
+	text-align: center;
+    margin-left: auto;
+    margin-right: auto;  
+}
+
+.table-container {
+    border: 0.1px solid #ddd;
+    border-radius: 10px;
+    background-color: #ddd; 
+	margin: 75px 200px 50px 200px;
+	text-align: center;
+}
+
+table {
+    margin: 0 auto;            
+}​
+
+.center-btn {
+    text-align: center;
+}
+
+.my-btn {
+    margin-top: 20px;
+    background-color: rgb(155, 151, 151);
+    text-align: center;
+    border-radius: 5px;
+    border: 0.01px solid rgb(155, 151, 151);
+    font-size: larger;
+    font-weight: 400;
+    padding: 5px 10px 5px 10px;
+    box-shadow: 2px 2px rgb(230, 227, 227);  
+}
+
+.my-btn:hover {
+    color: #ddd;
+}
+
+.home {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.card-display {
+    margin: 50px 150px 0 150px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 40px 100px 40px 100px;
+    background-color: rgba(221, 221, 221, 0.527);
+} 
+
+th {
+	padding: 20px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+td, tr {
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+a:link,
+a:visited,
+a:active {
+    text-decoration: none;
+    color: rgb(138, 177, 180);
+}
+
+

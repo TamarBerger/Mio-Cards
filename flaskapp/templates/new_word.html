@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+    <div class="flash-msg">
+        {% for msg in messages %}
+            <p>{{ msg }}</p>
+        {% endfor %}
+    </div>
+{% endif %}
+{% endwith %}
+
+    <div class="container">
+        <form class="form-new" method="POST">        
+            <h2 class="form-new-card-heading">{{ legend }}</h2>
+            {{ form.hidden_tag() }}
+            <!-- {{ wtf.form_field(form.name)}} -->
+            <div class="form-group">
+                {{ form.name.label(class="form-control-label") }}
+                {% if form.name.errors %}
+                    {{ form.name(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.name.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.name(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <!-- {{ wtf.form_field(form.heb_trans)}} -->
+            <div class="form-group">
+                {{ form.heb_trans.label(class="form-control-label") }}
+                {% if form.heb_trans.errors %}
+                    {{ form.heb_trans(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.heb_trans.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.heb_trans(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <!-- {{ wtf.form_field(form.eng_trans)}} -->
+            <div class="form-group">
+                {{ form.eng_trans.label(class="form-control-label") }}
+                {% if form.eng_trans.errors %}
+                    {{ form.eng_trans(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.eng_trans.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.eng_trans(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <!-- {{ wtf.form_field(form.category)}} -->
+            <div class="form-group">
+                {{ form.category.label(class="form-control-label") }}
+                {% if form.category.errors %}
+                    {{ form.category(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.category.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.category(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class='center-btn'>
+                <button class="my-btn" type="submit">Add Word</button>
+            </div>
+            <!-- <input type="text" placeholder="email" name="email">
+            <input type="text" placeholder="password" name="password">
+            <input type="submit" value="Sign In" class="btn btn-secondary"> -->
+        </form>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="flash-msg">
+                {% for msg in messages %}
+                    <p>{{ msg }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+ <div class="container">
+ 	<form class="form-new" method="POST">
+ 		<h2 class="form-new-category">Create Category</h2>
+ 		{{ form.hidden_tag() }}
+         {{ wtf.form_field(form.name)}}
+         {{ wtf.form_field(form.color)}}
+         {{ wtf.form_field(form.exp)}}
+ 		<label for="exampleColorInput" class="form-label">Color picker</label>
+        <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color">
+        <div class='center-btn'>
+            <button class="my-btn" type="submit">Add Category</button>
+        </div>
+     </form>
+ </div>
+
+{% endblock %}

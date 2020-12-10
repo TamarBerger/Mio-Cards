@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+    <div class="flash-msg">
+        {% for msg in messages %}
+            <p>{{ msg }}</p>
+        {% endfor %}
+    </div>
+{% endif %}
+{% endwith %}
+
+    <div>
+        {% for word in words %}
+
+            <h3><a class="article-title" href="{{ url_for('card', card_id=word.id) }}">{{ word.word_name }}</a></h3>
+            <h3>{{ word.hebrew_trans }}</h3>
+            <h3>{{ word.english_trans }}</h3>
+            <h3>{{ word.cat_words}}</h3>
+            
+        {% endfor %}
+    </div>
+
+{% endblock %}
